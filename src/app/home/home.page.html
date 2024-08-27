@@ -1,20 +1,31 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+    <ion-title> Geolocation bug </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+      <ion-title size="large">Capacitor Geolocation Bug</ion-title>
     </ion-toolbar>
   </ion-header>
 
   <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <p>This happens sometimes on my Samsung a54 and Samsung A10 Lite</p>
+    <p>geolocation can't determine position.</p>
+    <p>
+      When its happens, I enter google maps and the little ball is GRAY. After a
+      few seconds, the ball turns blue and then when returning to app the
+      geolocations works fine
+    </p>
+    <p>
+      It seems that the GPS is in hibernation mode and wakes up when we open
+      Google Maps, but the same does not happen in the app that uses the
+      geolocation plugin.
+    </p>
+
+    <ion-button (click)="get()">Get</ion-button>
+    <p *ngFor="let item of log">{{item}}</p>
   </div>
 </ion-content>
